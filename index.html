@@ -7,18 +7,20 @@
   </head>
   <body>
     <div class="container">
-      <form action="/" method="get">
+      <form action="" method="get">
         <input name="search" class="input" type="text" />
         <button type="submit" class="input">Search</button>
       </form>
       <div id="msg" class="msg"></div>
     </div>
     <script>
+      var valid = location.search.indexOf("?search=") == 0;
       var query = location.search.replace("?search=","");
-      if (query.length > 0) {
+      if (valid && (query.length > 0)) {
+        var pathname = location.pathname;
         var baseRedirect = "https://www.google.com/search?";
         var url = baseRedirect + "q=" + query + "&tbm=isch&tbs=itp:animated";
-        history.replaceState(null, null, '/');
+        history.replaceState(null, null, pathname);
         var text = decodeURIComponent(query.replace(/\+/g, '%20'));
         document.querySelector('input').value = text;
         window.location.replace(url);
