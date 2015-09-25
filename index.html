@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>gif thing</title>
+  </head>
+  <body>
+    <form id="form" style="width: 400px; margin: 50px auto">
+      <input id="txt" style="font-size: 18pt" type="text" />
+      <button type="submit" style="font-size: 18pt">Search</button>
+    </form>
+    <script>
+      var form = document.getElementById("form");
+      var txt = document.getElementById("txt");
+      var baseRedirect = "https://www.google.com/search?";
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var query = txt.value.replace(/ /g, '+');
+        var url = baseRedirect + "q=" + query + "&tbm=isch&tbs=itp:animated";
+        window.location.href = url;
+      });
+    </script>
+  </body>
+</html>
+
