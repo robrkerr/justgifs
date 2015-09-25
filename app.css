@@ -1,18 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   font-size: 18pt;
   font-family: Helvetica;
 }
 
 .container {
-  width: 400px; 
+  max-width: 400px; 
+  width: 100%;
   margin: 80px auto; 
 }
 
+.form {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input-container {
+  margin: 10px 0;
+}
+
 .input {
+  width: 100%;
+  font-size: 18pt;
+  font-family: Helvetica;
+}
+
+.button {
+  margin: 10px 0;
   font-size: 18pt;
   font-family: Helvetica;
 }
 
 .msg {
-  margin: 30px 0;
+  margin: 30px;
 }
