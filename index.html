@@ -2,23 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>gif thing</title>
+    <title>Gif Search</title>
+    <link href="/app.css" rel="stylesheet">
   </head>
   <body>
-    <form id="form" style="width: 400px; margin: 50px auto">
-      <input id="txt" style="font-size: 18pt" type="text" />
-      <button type="submit" style="font-size: 18pt">Search</button>
-    </form>
+    <div class="container">
+      <form action="/" method="get">
+        <input name="search" class="input" type="text" />
+        <button type="submit" class="input">Search</button>
+      </form>
+      <div id="msg" class="msg"></div>
+    </div>
     <script>
-      var form = document.getElementById("form");
-      var txt = document.getElementById("txt");
-      var baseRedirect = "https://www.google.com/search?";
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var query = txt.value.replace(/ /g, '+');
+      var query = location.search.replace("?search=","");
+      if (query.length > 0) {
+        var baseRedirect = "https://www.google.com/search?";
         var url = baseRedirect + "q=" + query + "&tbm=isch&tbs=itp:animated";
-        window.location.href = url;
-      });
+        history.replaceState(null, null, '/');
+        var text = decodeURIComponent(query.replace(/\+/g, '%20'));
+        document.querySelector('input').value = text;
+        window.location.replace(url);
+        document.getElementById('msg').innerHTML = 'Loading...';
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,18 @@
+html, body {
+  font-size: 18pt;
+  font-family: Helvetica;
+}
+
+.container {
+  width: 400px; 
+  margin: 80px auto; 
+}
+
+.input {
+  font-size: 18pt;
+  font-family: Helvetica;
+}
+
+.msg {
+  margin: 30px 0;
+}
