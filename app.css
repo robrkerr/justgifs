@@ -10,7 +10,8 @@ html, body {
 .container {
   max-width: 400px; 
   width: 100%;
-  margin: 80px auto; 
+  margin: 80px auto;
+  padding: 20px;
 }
 
 .title {
@@ -30,6 +31,7 @@ html, body {
 
 .input-container {
   margin: 10px 0;
+  flex-grow: 1;
 }
 
 .input {
@@ -45,5 +47,16 @@ html, body {
 }
 
 .msg {
-  margin: 30px;
+  margin: 30px 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  max-width: 360px; 
+  width: calc(100% - 55px);
+  padding: 10px 0;
+  font-size: 0.8em;
 }
