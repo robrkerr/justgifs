@@ -24,14 +24,28 @@ html, body {
 .form {
   width: 100%;
   display: flex;
-  align-items: stretch;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+    -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+       -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .input-container {
   margin: 10px 0;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .input {
@@ -54,7 +68,10 @@ html, body {
   position: absolute;
   bottom: 0;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: space-between;
+          justify-content: space-between;
   max-width: 360px; 
   width: calc(100% - 55px);
   padding: 10px 0;
